@@ -3,7 +3,9 @@ import React, { useEffect, useState } from "react";
 const StarBackground = () => {
   const [stars, setStars] = useState([]);
   const [meteors, setMeteors] = useState([]);
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(() =>
+    document.documentElement.classList.contains("dark"),
+  );
 
   // Detect theme changes
   useEffect(() => {
